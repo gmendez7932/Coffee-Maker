@@ -1,0 +1,33 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  Espresso class implements Coffee.
+ *  Any methods relating specifically to espresso are here
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.util.List;
+import java.util.Collections;
+
+public class Espresso implements Coffee
+{
+    @Override
+    public double getCost()
+    {
+        return 1.75;
+    }
+
+    @Override
+    public List<String> getIngredients()
+    {
+        return Collections.singletonList("Espresso");
+    }
+
+    @Override
+    public String printCoffee()
+    {
+        return "An espresso";
+    }
+}
