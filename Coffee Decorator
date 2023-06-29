@@ -1,0 +1,60 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  CoffeeDecorator is a parent class that implements Coffee.
+ *  Using Coffee to pass on abstract methods to its children,
+ *  CoffeeDecorator helps decorate the coffee with any add-ons
+ *  that are not a base coffee (black, espresso).
+ *  If there are any new add-ons for coffees that are added,
+ *  they should use this as a parent class.
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.util.List;
+
+public abstract class CoffeeDecorator implements Coffee
+{
+    private Coffee coffee;
+
+    /**
+     * Constructs a CoffeeDecorator object with the specified Coffee object.
+     *
+     * @param c the Coffee object to decorate
+     */
+    public CoffeeDecorator(Coffee c)
+    {
+        coffee = c;
+    }
+
+    /**
+     * Returns the cost of the decorated coffee.
+     *
+     * @return the cost of the decorated coffee
+     */
+    public double getCost()
+    {
+        return coffee.getCost();
+    }
+
+    /**
+     * Returns a list of ingredients used in the decorated coffee.
+     *
+     * @return a list of ingredients used in the decorated coffee
+     */
+    public List<String> getIngredients()
+    {
+        return coffee.getIngredients();
+    }
+
+    /**
+     * Returns a string representation of the decorated coffee.
+     *
+     * @return a string representation of the decorated coffee
+     */
+    public String printCoffee()
+    {
+        return coffee.printCoffee();
+    }
+}
