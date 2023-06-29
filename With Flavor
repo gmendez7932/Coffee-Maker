@@ -1,0 +1,62 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  WithFlavor is a special class that contains the Flavor add-on.
+ *  Since there can be multiple flavors, all of which share the same
+ *  costs and methods they are all put in here.
+ *  This way, flavors can be easily added or removed by just interacting
+ *  with this class without much issue to code.
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.util.List;
+
+public class WithFlavor extends CoffeeDecorator
+{
+
+    /**
+     * Enumeration of available syrup flavors.
+     */
+    enum Syrup
+    {
+        CARAMEL,
+        MOCHA,
+        VANILLA
+    }
+
+    private Syrup flavor;
+
+    /**
+     * Constructs a WithFlavor object with the specified base coffee and flavor.
+     *
+     * @param c the base coffee to decorate with flavor
+     * @param s the flavor to add to the coffee
+     */
+    public WithFlavor(Coffee c, Syrup s)
+    {
+        super(c);
+        flavor = s;
+    }
+
+    @Override
+    public double getCost()
+    {
+        return super.getCost() + 0.35;
+    }
+
+    @Override
+    public List<String> getIngredients()
+    {
+        List<String> ingredients = super.getIngredients();
+        ingredients.add(flavor.toString() + " flavor");
+        return ingredients;
+    }
+
+    @Override
+    public String printCoffee()
+    {
+        return super.printCoffee() + " with " + flavor;
+    }
+}
