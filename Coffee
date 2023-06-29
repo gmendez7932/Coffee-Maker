@@ -1,0 +1,35 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  Coffee Interface that provides base methods for
+ *  base coffees as well as coffee add-ons.
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.util.List;
+
+public interface Coffee
+{
+    /**
+     * Returns the cost of the coffee.
+     *
+     * @return the cost of the coffee
+     */
+    public double getCost();
+
+    /**
+     * Returns a list of ingredients used in the coffee.
+     *
+     * @return a list of ingredients used in the coffee
+     */
+    public List<String> getIngredients();
+
+    /**
+     * Returns a string representation of the coffee.
+     *
+     * @return a string representation of the coffee
+     */
+    public String printCoffee();
+}
