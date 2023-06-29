@@ -1,0 +1,33 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  BlackCoffee is a class that implements coffee.
+ *  Any methods that are specific to this coffee base go here
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.util.List;
+import java.util.Collections;
+
+public class BlackCoffee implements Coffee
+{
+    @Override
+    public double getCost()
+    {
+        return 1.0;
+    }
+
+    @Override
+    public List<String> getIngredients()
+    {
+        return Collections.singletonList("Coffee");
+    }
+
+    @Override
+    public String printCoffee()
+    {
+        return "A black coffee";
+    }
+}
