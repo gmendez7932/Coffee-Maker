@@ -12,15 +12,27 @@ Once it has this, the program will show the user its menu and then prompt the us
 5. User can use this to view the orders that the application has made that session
 6. User can use this to exit the code.
 
-Black Coffee: Handles BlackCoffee specific tasks
+BlackCoffee: Handles BlackCoffee specific tasks
+
 Coffee: Interface for many Coffee objects
-Coffee Decorator: Parent Class for Coffee Add-ons
-Coffee Order: Class to handle lists of coffee orders and their functions
+
+CoffeeDecorator: Parent Class for Coffee Add-ons
+
+CoffeeOrder: Class to handle lists of coffee orders and their functions
+
 Espresso: Handles Espresso specific tasks
+
 Inventory.txt: Where the inventory is read and written to
+
 Main: WHere user runs and interacts with application
+
 WithFlavor: Handles Flavor related ingredients
+
 WithHotWater: Handles Hot Water ingredient specific tasks
+
 WithMilk: Handles Milk ingredient specific tasks
+
 WithSugar: Handles Sugar ingredient specific tasks
+
 WithWhippedCream: Handles Whipped Cream ingredient specific tasks
+
