@@ -1,0 +1,73 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  CoffeeOrder class is responsible for creating and updating the list of Coffee objects
+ *  As well as tracking the coffees within the orders
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CoffeeOrder
+{
+    private List<Coffee> coffees;
+    private LocalDateTime orderDate;
+
+    /**
+     * Constructs a CoffeeOrder object with the current date and time as the order date.
+     */
+    public CoffeeOrder()
+    {
+        coffees = new ArrayList<Coffee>();
+        orderDate = LocalDateTime.now();
+    }
+
+    /**
+     * Adds a Coffee object to the order.
+     *
+     * @param c the Coffee object to add
+     */
+    public void addCoffee(Coffee c)
+    {
+        coffees.add(c);
+    }
+
+
+    /**
+     * Calculates and returns the total cost of the order.
+     *
+     * @return the total cost of the order
+     */
+    public double getTotal()
+    {
+        double total = 0;
+        for (Coffee coffee : coffees)
+        {
+            total += coffee.getCost();
+        }
+        return total;
+    }
+
+    /**
+     * Returns a string representation of the order receipt.
+     *
+     * @return a string representation of the order receipt
+     */
+    public String printOrder()
+    {
+        StringBuilder order = new StringBuilder("ORDER RECEIPT\n");
+        order.append(String.format("Timestamp: %s%n", orderDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mma"))));
+        for (int i = 0; i < coffees.size(); i++)
+        {
+            Coffee coffee = coffees.get(i);
+            order.append(String.format("Item %d: %s - %.2f%n", i + 1, coffee.printCoffee(), coffee.getCost()));
+        }
+        order.append(String.format("TOTAL = %.2f%n", getTotal()));
+        return order.toString();
+    }
+}
