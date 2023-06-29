@@ -1,0 +1,45 @@
+/**
+ *  Lab 6
+ *  CS160L
+ *
+ *  WithMilk is a child of CoffeeDecorator.
+ *  All methods implemented here are specific to the
+ *  Milk ingredient.
+ *
+ *  6/28/23
+ *  @author  Gabriel Mendez
+ */
+import java.util.List;
+
+public class WithMilk extends CoffeeDecorator
+{
+    /**
+     * Constructs a WithMilk object with the specified base coffee.
+     *
+     * @param c the base coffee to decorate with milk
+     */
+    public WithMilk(Coffee c)
+    {
+        super(c);
+    }
+
+    @Override
+    public double getCost()
+    {
+        return super.getCost() + 0.55;
+    }
+
+    @Override
+    public List<String> getIngredients()
+    {
+        List<String> ingredients = super.getIngredients();
+        ingredients.add("Milk");
+        return ingredients;
+    }
+
+    @Override
+    public String printCoffee()
+    {
+        return super.printCoffee() + " with milk";
+    }
+}
